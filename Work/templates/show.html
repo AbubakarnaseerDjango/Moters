@@ -1,0 +1,23 @@
+{% extends "parent.html" %}
+
+{% block title %}{{ section.title }}{% endblock %}
+
+{% block content %}
+
+{% for i in kam %}
+
+  <div class="tm-item-container">
+            <img src="/media/{{i.image}}" alt="Image" class="img-responsive margin-bottom-15">
+            <p class="tm-item-description">{{i.description}}</p><hr>
+            <div class="tm-item-price-container">
+              <span class="tm-item-price">{{i.price}}</span>
+              <a href="/products/{{i.id}}" class="tm-item-link">
+                <span class="tm-item-action">{{i.catagry}}</span>
+                <img src="/static/img/plus.png" class="tm-item-add-icon" alt="Image">
+              </a>
+            </div>
+          </div>
+ 
+{% endfor %}
+
+{% endblock %}

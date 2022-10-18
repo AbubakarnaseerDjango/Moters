@@ -1,0 +1,65 @@
+{% comment %} {% extends "parent.html" %}
+
+{% block content %} {% endcomment %}
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Read data</h2>
+
+<table style="width:100%">
+
+<thead>
+    <tr>
+        <th>Id</th>    
+        <th>UserName</th>
+        <th>First_name</th>
+        <th>last_name</th>
+        <th>password1</th>
+        <th>password2</th>
+        <th>Email</th>
+        <th>update</th>
+        <th>Delete</th>
+            
+    </tr>
+    </thead>
+  <tr>{% for i in data %}
+            
+            <td>
+                {{i.id}}
+            </td>
+            
+            <td>
+                {{i.username}}
+            </td>
+            
+            <td>
+                {{i.first_name}}
+            </td>
+            <td>
+                {{i.last_name}}
+            </td>
+            <td>
+                {{i.password1}}
+            </td>
+            <td>
+                {{i.password2}}
+            </td>
+            <td>
+                {{i.email}}
+            </td>
+            <td>
+            <a href = "/update/{{i.id}}">Update</a>
+            </td>
+        <td>
+            <a href = "/delete/{{i.id}}">Delete</a>
+            </td>
+        </tr>
+        
+            {% endfor %}
+</table>
+{% comment %} <a href = "/work/create">Create person</a> {% endcomment %}
+{% comment %} {% endblock %} {% endcomment %}

@@ -1,0 +1,56 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+
+<thead>
+    <tr>
+        <th>Id</th>    
+        <th>UserName</th>
+        <th>First_name</th>
+        <th>last_name</th>
+        <th>Email</th>
+            
+    </tr>
+    </thead>
+  <tr>{% for i in data %}
+            <td>
+                {{i.id}}
+            </td>
+            <td>
+                {{i.username}}
+            </td>
+            
+            <td>
+                {{i.first_name}}
+            </td>
+            <td>
+                {{i.last_name}}
+            </td>
+            <td>
+                {{i.email}}
+            </td>
+           
+        </tr>
+            {% endfor %}
+</table>
+
+
+<p>Forms data</p>
+<form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+ 
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+ 
+        <input type="submit" value="Update">
+        
+    </form>
